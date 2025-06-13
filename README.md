@@ -56,6 +56,7 @@ recolor_except_gray(
     invert_colors=False,
     brightness=1.1
 )
+```
 
 ## 📜 License
 
