@@ -139,6 +139,13 @@ This function requires Pillow, numpy, and matplotlib.
 | 1.5   | Higher contrast, colors are vivid and punchy     | For vibrant, striking recoloring    |
 | 2.0   | Very high contrast, strong light-dark separation | Artistic or dramatic effect          |
 
+Example:
+
+```python
+recolor_except_gray('input.jpg', 'output_contrast_1.5.jpg',
+                    contrast=1.5, brightness=1.0)
+```
+
 ---
 
 ### 2. Brightness (`brightness`)
@@ -150,6 +157,11 @@ This function requires Pillow, numpy, and matplotlib.
 | 1.3   | Brighter colors                | To make image pop more         |
 | 1.7   | Very bright, possibly washed out | For strong highlights          |
 
+Example:
+
+```python
+```
+
 ---
 
 ### 3. Grayscale Tolerance (`tol`)
@@ -159,6 +171,11 @@ This function requires Pillow, numpy, and matplotlib.
 | 5     | Very strict grayscale detection, few pixels preserved | To recolor almost everything         |
 | 16    | Balanced (default)                                  | Standard preservation of grays       |
 | 30    | Loose grayscale detection, many pixels preserved   | To preserve near-gray subtle colors  |
+
+Example:
+
+```python
+```
 
 ---
 
@@ -170,6 +187,11 @@ This function requires Pillow, numpy, and matplotlib.
 | 40    | Moderate reinforcement (default)                  | Balanced black reinforcement    |
 | 70    | Strong reinforcement, many dark areas become black | High contrast black areas        |
 
+Example:
+
+```python
+```
+
 ---
 
 ### 5. White Reinforcement Threshold (`white_threshold`)
@@ -179,6 +201,11 @@ This function requires Pillow, numpy, and matplotlib.
 | 200   | Broad reinforcement, many light grays become white | Strong highlight emphasis            |
 | 215   | Moderate reinforcement (default)                    | Balanced white reinforcement         |
 | 240   | Only very bright pixels reinforced                  | Preserve subtle light details        |
+
+Example:
+
+```python
+```
 
 ---
 
