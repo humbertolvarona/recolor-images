@@ -2,7 +2,7 @@
 
 Recolors image pixels except grays using matplotlib colormap with adjustable brightness
 
-![License](https://img.shields.io/badge/License-MIT-green)
+![License](https://img.shields.io/badge/License-CC_Zero_v1.0_Universal-green)
 
 # Function: recolor_except_gray
 
@@ -59,7 +59,7 @@ recolor_except_gray(
 
 ## 📜 License
 
-CC0
+Creative Commons Zero v1.0 Universal
 
 ---
 
