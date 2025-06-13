@@ -21,7 +21,7 @@ while leaving grayscale pixels (including black, white, and shades of gray) unto
 
 - **colormap_name** (`str`, optional, default: `'YlOrBr'`):  
   The name of a matplotlib colormap to apply to the colored pixels.  
-  Examples: `'YlOrBr'`, `'plasma'`, `'viridis'`, `'magma'`, `'inferno'`, `'turbo'`.
+  Examples: `'YlOrBr'`, `'plasma'`, `'viridis'`, `'magma'`, `'turbo'`, `'cividis'`, `'twilight'`, `'nipy_spectral'`, `'cubehelix'`, `'gist_earth'`, `'ocean'`, `'terrain'`.
 
 - **tol** (`int`, optional, default: 16):  
   The tolerance threshold to consider a pixel grayscale.  
