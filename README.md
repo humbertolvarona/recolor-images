@@ -126,6 +126,70 @@ Choose black_threshold and white_threshold based on your image's contrast and de
 Use reinforce_whites=False to skip white reinforcement if undesired.
 This function requires Pillow, numpy, and matplotlib.
 
+---
+
+## Effects of Key Parameters with Examples
+
+### 1. Contrast (`contrast`)
+
+| Value | Effect                                             | Example Use Case                      |
+|-------|--------------------------------------------------|-------------------------------------|
+| 0.5   | Low contrast, colors look softer and more muted  | For subtle, pastel-like images      |
+| 1.0   | No contrast change                                | Default, natural look                |
+| 1.5   | Higher contrast, colors are vivid and punchy     | For vibrant, striking recoloring    |
+| 2.0   | Very high contrast, strong light-dark separation | Artistic or dramatic effect          |
+
+---
+
+### 2. Brightness (`brightness`)
+
+| Value | Effect                         | Example Use Case                |
+|-------|--------------------------------|-------------------------------|
+| 0.7   | Darker image                   | For moody or dimmed recolors  |
+| 1.0   | No brightness change (default) | Natural color brightness       |
+| 1.3   | Brighter colors                | To make image pop more         |
+| 1.7   | Very bright, possibly washed out | For strong highlights          |
+
+---
+
+### 3. Grayscale Tolerance (`tol`)
+
+| Value | Effect                                               | Example Use Case                       |
+|-------|----------------------------------------------------|--------------------------------------|
+| 5     | Very strict grayscale detection, few pixels preserved | To recolor almost everything         |
+| 16    | Balanced (default)                                  | Standard preservation of grays       |
+| 30    | Loose grayscale detection, many pixels preserved   | To preserve near-gray subtle colors  |
+
+---
+
+### 4. Black Reinforcement Threshold (`black_threshold`)
+
+| Value | Effect                                             | Example Use Case                  |
+|-------|--------------------------------------------------|---------------------------------|
+| 10    | Only deepest blacks reinforced                   | Preserve shadows, subtle blacks |
+| 40    | Moderate reinforcement (default)                  | Balanced black reinforcement    |
+| 70    | Strong reinforcement, many dark areas become black | High contrast black areas        |
+
+---
+
+### 5. White Reinforcement Threshold (`white_threshold`)
+
+| Value | Effect                                               | Example Use Case                      |
+|-------|----------------------------------------------------|-------------------------------------|
+| 200   | Broad reinforcement, many light grays become white | Strong highlight emphasis            |
+| 215   | Moderate reinforcement (default)                    | Balanced white reinforcement         |
+| 240   | Only very bright pixels reinforced                  | Preserve subtle light details        |
+
+---
+
+## Combined Example
+
+Recolor with vivid contrast, slightly brighter, strict grayscale preservation,  
+strong black reinforcement, and white reinforcement enabled:
+
+
+---
+
 ## 📜 License
 
 Creative Commons Zero v1.0 Universal
