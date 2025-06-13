@@ -146,6 +146,8 @@ recolor_except_gray('input.jpg', 'output_contrast_1.5.jpg',
                     contrast=1.5, brightness=1.0)
 ```
 
+This increases contrast by 50%, making colors more vivid and the image more striking.
+
 ---
 
 ### 2. Brightness (`brightness`)
@@ -160,7 +162,11 @@ recolor_except_gray('input.jpg', 'output_contrast_1.5.jpg',
 Example:
 
 ```python
+recolor_except_gray('input.jpg', 'output_brightness_1.3.jpg',
+                    brightness=1.3, contrast=1.0)
 ```
+
+This brightens the recolored pixels by 30%, making the image more luminous.
 
 ---
 
@@ -175,7 +181,10 @@ Example:
 Example:
 
 ```python
+recolor_except_gray('input.jpg', 'output_tol_5.jpg', tol=5)
 ```
+
+A low tolerance means almost all pixels are recolored, with very few left as grayscale.
 
 ---
 
@@ -190,7 +199,11 @@ Example:
 Example:
 
 ```python
+recolor_except_gray('input.jpg', 'output_blackthresh_70.jpg',
+                    black_threshold=70)
 ```
+
+This raises the threshold, causing more dark pixels to become pure black and increasing image contrast.
 
 ---
 
@@ -205,7 +218,11 @@ Example:
 Example:
 
 ```python
+recolor_except_gray('input.jpg', 'output_whitethresh_200.jpg',
+                    reinforce_whites=True, white_threshold=200)
 ```
+
+Lowering the threshold causes more light pixels to be forced to pure white, making highlights stronger.
 
 ---
 
