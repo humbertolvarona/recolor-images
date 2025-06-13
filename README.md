@@ -226,11 +226,35 @@ Lowering the threshold causes more light pixels to be forced to pure white, maki
 
 ---
 
-## Combined Example
+## Combined Example with Detailed Explanation
 
-Recolor with vivid contrast, slightly brighter, strict grayscale preservation,  
-strong black reinforcement, and white reinforcement enabled:
+**Example:**
 
+```python
+recolor_except_gray(
+    'input.jpg', 'output_combined.jpg',
+    colormap_name='plasma',
+    tol=8,
+    invert_colors=False,
+    brightness=1.2,
+    contrast=1.5,
+    reinforce_blacks=True,
+    black_threshold=60,
+    reinforce_whites=True,
+    white_threshold=210
+)
+```
+
+**Explanation:**
+
+* `colormap_name='plasma'`: Uses the vivid and striking "plasma" colormap.
+* `tol=8`: Strict grayscale detection, leaving very few pixels untouched.
+* `brightness=1.2`: Increases overall brightness slightly.
+* `contrast=1.5`: Enhances the color contrast significantly.
+* `reinforce_blacks=True` and `black_threshold=60`: Intensifies shadows and dark regions significantly.
+* `reinforce_whites=True` and `white_threshold=210`: Highlights brighter areas prominently, pushing lighter tones towards pure white.
+
+This combination produces a vivid, high-contrast, and brightly illuminated image ideal for artistic or dramatic visual effects.
 
 ---
 
