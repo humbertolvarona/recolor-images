@@ -102,9 +102,14 @@ recolor_except_gray(
     input_path='input_image.jpeg',
     output_path='output_recolored.jpeg',
     colormap_name='plasma',
-    tol=10,
+    tol=16,
     invert_colors=False,
-    brightness=1.1
+    brightness=1.1,
+    contrast=1.3,
+    reinforce_blacks=True,
+    black_threshold=40,
+    reinforce_whites=True,
+    white_threshold=220
 )
 ```
 
