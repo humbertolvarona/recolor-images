@@ -113,6 +113,19 @@ recolor_except_gray(
 )
 ```
 
+This recolors colored pixels using the 'plasma' colormap,
+leaves grayscale pixels intact, inverts no colors, brightens recolored pixels by 10%,
+increases contrast by 30%, reinforces blacks below luminance 40 to pure black,
+and reinforces whites above luminance 220 to pure white.
+
+Notes
+
+Adjust tol carefully to balance recoloring and grayscale preservation.
+Use contrast to tune the vividness of the recolored image.
+Choose black_threshold and white_threshold based on your image's contrast and desired effect.
+Use reinforce_whites=False to skip white reinforcement if undesired.
+This function requires Pillow, numpy, and matplotlib.
+
 ## 📜 License
 
 Creative Commons Zero v1.0 Universal
