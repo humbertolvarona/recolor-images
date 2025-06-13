@@ -11,6 +11,15 @@ while leaving grayscale pixels (including black, white, and shades of gray) unto
 
 ---
 
+## Requirements
+
+- Python 3.x
+- Pillow (`pip install pillow`)
+- NumPy (`pip install numpy`)
+- Matplotlib (`pip install matplotlib`)
+
+---
+
 ## Parameters
 
 - **input_path** (`str`):  
