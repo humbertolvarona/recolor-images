@@ -7,8 +7,15 @@ def is_gray(pixel, tol=16):
            abs(int(pixel[1]) - int(pixel[2])) < tol and \
            abs(int(pixel[0]) - int(pixel[2])) < tol
 
+def adjust_contrast(arr, contrast=1.0):
+    factor = (259 * (contrast + 255)) / (255 * (259 - contrast))
+    return np.clip(factor * (arr - 128) + 128, 0, 255)
+
 def recolor_except_gray(input_path, output_path, colormap_name='YlOrBr',
-                        tol=16, invert_colors=False, brightness=1.0):
+                        tol=16, invert_colors=False, brightness=1.0,
+                        contrast=1.0,
+                        reinforce_blacks=True, black_threshold=40,
+                        reinforce_whites=False, white_threshold=215):
     img = Image.open(input_path).convert('RGB')
     arr = np.array(img)
     height, width, _ = arr.shape
@@ -26,11 +33,22 @@ def recolor_except_gray(input_path, output_path, colormap_name='YlOrBr',
                 gray_mask[i, j] = True
 
     cmap = cm.get_cmap(colormap_name)
-    recolored = cmap(luminance_norm)[..., :3] * 255 * brightness
+    recolored = cmap(luminance_norm)[..., :3] * 255
+    recolored = adjust_contrast(recolored, contrast)
+    recolored = recolored * brightness
     recolored = np.clip(recolored, 0, 255).astype(np.uint8)
 
     output_arr = arr.copy()
     output_arr[~gray_mask] = recolored[~gray_mask]
 
+    if reinforce_blacks:
+        black_mask = luminance < black_threshold
+        output_arr[black_mask] = [0, 0, 0]
+
+    if reinforce_whites:
+        white_mask = luminance >= white_threshold
+        output_arr[white_mask] = [255, 255, 255]
+
     output_img = Image.fromarray(output_arr)
     output_img.save(output_path)
+                            
