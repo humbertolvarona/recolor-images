@@ -1,6 +1,6 @@
 # recolor-images
 
-Recolors image pixels except grays using matplotlib colormap with adjustable brightness
+Recolors image pixels except grays
 
 ![License](https://img.shields.io/badge/License-Creative_Commons_Zero_v1.0_Universal-green)
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
