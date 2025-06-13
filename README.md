@@ -72,4 +72,4 @@ Pull requests, ideas, and bug reports are welcome 🙌
 
 ## 👨‍💼 Maintainer
 
-**HL Varona** — [@humberto.varona@gmail.com](mailto:humberto.varona@gmail.com)
+**HL Varona** — [humberto.varona@gmail.com](mailto:humberto.varona@gmail.com)
